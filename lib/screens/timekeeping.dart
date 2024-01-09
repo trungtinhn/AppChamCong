@@ -3,7 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:wifi_info_plugin_plus/wifi_info_plugin_plus.dart';
 
 class TimeKeepting extends StatefulWidget {
-  const TimeKeepting({super.key});
+  final String maNV;
+  const TimeKeepting({super.key, required this.maNV});
 
   @override
   State<TimeKeepting> createState() => _TimeKeeptingState();
@@ -37,12 +38,12 @@ class _TimeKeeptingState extends State<TimeKeepting> {
     String ipAddress =
         _wifiObject != null ? _wifiObject!.ipAddress.toString() : "...";
 
-    String macAddress =
-        _wifiObject != null ? _wifiObject!.macAddress.toString() : '...';
-    String connectionType = _wifiObject != null
-        ? _wifiObject!.connectionType.toString()
-        : 'unknown';
-
-    return const Placeholder();
+    return Scaffold(
+      body: Center(
+        child: ipAddress == "192.168.102.181"
+            ? ElevatedButton(onPressed: () {}, child: const Text('Chấm công'))
+            : const Text('Không được phép chấm công'),
+      ),
+    );
   }
 }

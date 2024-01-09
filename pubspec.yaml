@@ -38,6 +38,13 @@ dependencies:
   network_info_plus: ^4.1.0
   wifi_info_plugin_plus: ^2.0.2
   firebase_core: ^2.24.2
+  firebase_auth: ^4.15.3
+  cloud_firestore: ^4.13.6
+  provider: ^6.1.1
+  fluro: ^2.0.5
+  intl: ^0.19.0
+  file_picker: ^6.1.1
+  firebase_storage: ^11.6.0
 
 dev_dependencies:
   flutter_test:
