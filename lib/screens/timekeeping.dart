@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/provider/nguoidung.provider.dart';
+import 'package:provider/provider.dart';
 import 'package:wifi_info_plugin_plus/wifi_info_plugin_plus.dart';
 
 class TimeKeepting extends StatefulWidget {
@@ -11,6 +13,7 @@ class TimeKeepting extends StatefulWidget {
 }
 
 class _TimeKeeptingState extends State<TimeKeepting> {
+  DateTime? time = DateTime.now();
   WifiInfoWrapper? _wifiObject;
 
   // Platform messages are asynchronous, so we initialize in an async method.
@@ -35,6 +38,8 @@ class _TimeKeeptingState extends State<TimeKeepting> {
 
   @override
   Widget build(BuildContext context) {
+    final chamCongProvider = Provider.of<NguoiDungProvider>(context);
+
     String ipAddress =
         _wifiObject != null ? _wifiObject!.ipAddress.toString() : "...";
 
