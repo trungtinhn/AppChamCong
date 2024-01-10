@@ -125,6 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           );
                         }
                       } catch (e) {
+                        print(e);
                         // ignore: use_build_context_synchronously
                         ScaffoldMessenger.of(context).showSnackBar(
                             buildFailedSnackbar('Đăng nhập không thành công!'));

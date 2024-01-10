@@ -4,11 +4,11 @@ class ChamCong {
   final String maCC;
   final String maNV;
   final Timestamp ngayCC;
-  final Timestamp timeVao;
-  final Timestamp timeVaoTT;
-  final Timestamp timeRa;
-  final Timestamp timeRaTT;
-  final String status;
+  Timestamp? timeVao;
+  Timestamp? timeVaoTT;
+  Timestamp? timeRa;
+  Timestamp? timeRaTT;
+  String? status;
 
   ChamCong(
       {required this.maCC,
@@ -37,11 +37,11 @@ class ChamCong {
     return ChamCong(
         maCC: json['maCC'] ?? '',
         maNV: json['maNV'] ?? '',
-        ngayCC: json['ngayCC'] ?? '',
-        timeVao: json['timeVao'] ?? '',
-        timeVaoTT: json['timeVaoTT'] ?? '',
-        timeRa: json['timeRa'] ?? '',
-        timeRaTT: json['timeRaTT'] ?? '',
+        ngayCC: json['ngayCC'],
+        timeVao: json['timeVao'],
+        timeVaoTT: json['timeVaoTT'],
+        timeRa: json['timeRa'],
+        timeRaTT: json['timeRaTT'],
         status: json['status'] ?? '');
   }
 }
